@@ -88,14 +88,17 @@ function generateQRCode(rowContainer, text) {
 
 
 function downloadAll() {
-    var qrContainers = document.querySelectorAll("#qr-code > div");
+    var qrContainers = document.querySelectorAll("#qr-code > .row-container");
 
-    qrContainers.forEach((container, index) => {
-        var canvas = container.querySelector("canvas");
-        var link = document.createElement("a");
-        link.setAttribute("download", `qr_code_${index + 1}.png`);
-        link.href = canvas.toDataURL();
-        link.click();
+    qrContainers.forEach((rowContainer, rowIndex) => {
+        var qrCodes = rowContainer.querySelectorAll("canvas");
+
+        qrCodes.forEach((canvas, colIndex) => {
+            var link = document.createElement("a");
+            link.setAttribute("download", `qr_code_${rowIndex + 1}_${colIndex + 1}.png`);
+            link.href = canvas.toDataURL();
+            link.click();
+        });
     });
 }
 
