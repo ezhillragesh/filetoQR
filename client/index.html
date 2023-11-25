@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ezhill Ragesh">
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="./style.css" >
+    <title>qrFile - Generate QR Code from Text File</title>
+</head>
+
+<body class="body">
+
+    <div class="container">
+        <h1 class="heading">Text To QR</h1>
+        <p class="description">Upload a text file and generate a QR code for its contents. 
+            After uploading the file, you can display its contents, generate QR codes, and download them.</p>
+
+        <label for="file1" class="label">Upload File:</label>
+        <input type="file" accept=".txt" id="file1" name="file1" class="file-input">
+
+        <button id="submit" class="button display-button">Display Contents</button>
+
+        <label for="file2" class="label mt-8">File Contents:</label>
+        <textarea name="Text1" cols="40" rows="5" id="input_text" for="display" class="file-contents-input"></textarea>
+        <p id="warning">*File Contents can be modified.</p>
+        <p id="info" class="info-message"></p> <!-- Add this new paragraph -->
+
+        <div class="qr-code-container">
+            
+            <div id="qr-code" class="qr-code" style="display: none;"></div>
+            <button id="button" type="submit" class="button generate-button">Generate QR Code</button>
+            
+        <button id="downloadAll" type="submit" class="button download">Download</button>
+            
+        </div>
+        
+    </div>
+
+    <footer class="footer">
+       Created by <a href="https://github.com/ezhillragesh" target="_blank" class="footer-link">&copy; Ezhill Ragesh</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
