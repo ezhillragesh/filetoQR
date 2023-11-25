@@ -30,7 +30,7 @@ function readFileContent(file) {
 
 
 function generateQRCodes(user_input) {
-    const chunkSize = 1200;
+    const chunkSize = 300;
     const inputText = user_input.value;
 
     // Clear existing QR codes and info message
